@@ -1,0 +1,84 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
+
+.intro {
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 100px;
+
+  @include mq(small) {
+    flex-direction: column-reverse;
+  }
+
+  &--style--sign-up {
+    @include mq(medium) {
+      text-align: center;
+      flex-direction: column;
+
+      .intro__text {
+        max-width: 56ch;
+        margin-bottom: 6.5em;
+      }
+    }
+  }
+}
+
+.intro__text {
+  position: relative;
+
+  max-width: 58ch;
+
+  animation-name: slideToRight;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+  @include mq(medium) {
+    max-width: 35ch;
+  }
+
+  @include mq(small) {
+    max-width: 33ch;
+    text-align: center;
+  }
+}
+
+.intro__title {
+  margin-bottom: 0.42em;
+  color: var(--clr-primary-300);
+}
+
+.intro__descrition {
+  font-size: var(--fs-400);
+  line-height: 1.5;
+  color: var(--clr-primary-500);
+
+  margin-bottom: 1.5em;
+}
+
+.intro__image {
+  position: relative;
+
+  margin-right: -1.4375em;
+
+  animation-name: slideToLeft;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+  @include mq(medium) {
+    max-width: 17.5625em;
+    margin-right: -0.75em;
+    padding-top: 1.1875em;
+  }
+
+  @include mq(small) {
+    max-width: 10.6875em;
+    margin-right: 0;
+    padding-top: 0;
+    margin-bottom: 2em;
+  }
+}

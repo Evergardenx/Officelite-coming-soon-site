@@ -1,0 +1,149 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 10;
+
+  @include mq(medium) {
+    justify-content: center;
+
+    > .card {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  @include mq(small) {
+    justify-content: center;
+  }
+}
+
+.card {
+  max-width: 21.875rem;
+  min-height: 31.75rem;
+
+  padding: 2.5em 4em;
+  border-radius: 0.8125em;
+  text-align: center;
+
+  color: var(--clr-card-text);
+  background-color: var(--clr-card-bg);
+
+  opacity: 0;
+  transition: 0.4s linear;
+
+  &--type--pro {
+    background-image: url("/images/home/bg-pattern-pricing.svg");
+    background-repeat: no-repeat;
+    background-position: -17.5rem -23.8125rem;
+  }
+
+  @include mq(medium) {
+    max-width: 43.0625em;
+    min-height: max-content;
+
+    padding: 3em;
+
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    text-align: left;
+
+    &--type--pro {
+      background-position: -19rem -18rem;
+    }
+  }
+
+  @include mq(small) {
+    max-width: 20.4375em;
+    flex-direction: column;
+
+    padding: 2.5em 3.6em;
+
+    text-align: center;
+
+    &--type--pro {
+      background-position: -17rem -23rem;
+    }
+  }
+}
+
+.card.card--theme--snow {
+  --clr-card-about: var(--clr-primary-500);
+  --clr-card-bg: var(--clr-neutral-100);
+  --clr-card-text: var(--clr-primary-300);
+}
+
+.card.card--theme--water {
+  --clr-card-about: var(--clr-neutral-300);
+  --clr-card-bg: var(--clr-primary-100);
+  --clr-card-text: var(--clr-neutral-100);
+}
+
+.card__header {
+  @include mq(medium) {
+    margin-right: 7em;
+  }
+
+  @include mq(small) {
+    margin-bottom: 2.8em;
+    margin-right: 0;
+  }
+}
+
+.card__type {
+  margin-bottom: 2.5em;
+
+  @include mq(medium) {
+    margin-bottom: 1em;
+  }
+
+  @include mq(small) {
+    margin-bottom: 2.5em;
+  }
+}
+
+.card__price {
+  margin-bottom: 0.5em;
+
+  @include mq(medium) {
+    margin-bottom: 0.25em;
+    &.h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  @include mq(small) {
+    margin-bottom: 0.4em;
+  }
+}
+
+.card__description {
+  margin-bottom: 3.5em;
+
+  @include mq(medium) {
+    margin-bottom: 1.5em;
+  }
+}
+
+.card__about {
+  margin-bottom: 2em;
+
+  color: var(--clr-card-about);
+
+  li:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+
+  @include mq(medium) {
+    margin-bottom: 0;
+  }
+
+  @include mq(medium) {
+    margin-bottom: 2em;
+  }
+}

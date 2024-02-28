@@ -1,0 +1,64 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+.btn.btn--theme--water {
+    --clr-btn-text: var(--clr-neutral-100);
+    --clr-btn-bg: var(--clr-primary-100);
+    --clr-btn-bg-hover: var(--clr-primary-200);
+}
+.btn.btn--theme--sky {
+    --clr-btn-text: var(--clr-primary-100);
+    --clr-btn-bg: var(--clr-neutral-200);
+    --clr-btn-bg-hover: var(--clr-neutral-300);
+}
+.btn.btn--theme--snow {
+    --clr-btn-text: var(--clr-primary-100);
+    --clr-btn-bg: var(--clr-neutral-100);
+    --clr-btn-bg-hover: var(--clr-primary-200);
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 0.875em 3.375em;
+    border-radius: 1.75em;
+
+    font-weight: bold;
+    line-height: 1.75;
+
+    color: var(--clr-btn-text);
+    background-color: var(--clr-btn-bg);
+
+    &:hover {
+        background-color: var(--clr-btn-bg-hover);
+    }
+
+    &--shadow {
+        box-shadow: 0 1.5625em 1.5625em -0.625em hsla(227, 52%, 50%, 0.25);
+        filter: drop-shadow(0 0.25em 0.25em hsla(0, 0%, 0%, 0.25));
+    }
+
+    &--desktop {
+        display: inline-block;
+
+        @include mq(medium) {
+            display: none;
+        }
+
+        @include mq(small) {
+            display: inline-block;
+        }
+    }
+
+    &--tablet {
+        display: none;
+
+        @include mq(medium) {
+            display: inline-block;
+        }
+
+        @include mq(small) {
+            display: none;
+        }
+    }
+}

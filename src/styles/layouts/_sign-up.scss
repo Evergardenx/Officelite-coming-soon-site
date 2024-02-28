@@ -1,0 +1,67 @@
+@use "../components/form" as *;
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  background-color: var(--clr-neutral-100);
+}
+
+.sign-up {
+  overflow: hidden;
+
+  &::after {
+    content: "";
+
+    width: 26.25rem;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: var(--clr-primary-400);
+    background-image: url("/images/sign-up/bg-pattern-side.svg");
+    background-repeat: no-repeat;
+    background-position: -47.437rem -49.125rem;
+  }
+
+  @include mq(medium) {
+    position: relative;
+
+    &::after {
+      width: 100%;
+      min-height: 23.75em;
+
+      top: unset;
+
+      margin-bottom: -8em;
+
+      background-position: -39.437rem -55.125rem;
+    }
+  }
+
+  @include mq(small) {
+    &::after {
+      background-position: -51.437rem -51.125rem;
+    }
+  }
+}
+
+.sign-up__header {
+  margin-bottom: 2em;
+  padding-top: 3em;
+
+  @include mq(medium) {
+    padding-top: 4.5em;
+    margin-bottom: 6.5em;
+  }
+
+  @include mq(small) {
+    text-align: center;
+  }
+}
+
+.form__btn {
+  margin-top: 2.5em;
+  width: 100%;
+}

@@ -1,0 +1,155 @@
+.form {
+  position: relative;
+  z-index: 100;
+
+  max-width: 27.8125rem;
+  min-height: 31.75rem;
+
+  padding: 2.5em 2.625em 3.125em;
+  border-radius: 0.8125em;
+
+  background-color: var(--clr-neutral-100);
+
+  animation-name: slideToLeft;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+  box-shadow: 0px 3.125em 3.125em -1.5625em hsla(227, 34%, 45%, 0.25);
+  filter: drop-shadow(0 0.25em 0.25em hsla(0, 0%, 0%, 0.25));
+
+  label:not(:first-of-type) {
+    margin-top: 1.5em;
+  }
+
+  label {
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+
+    &::before {
+      content: url("/images/sign-up/icon-cross.svg");
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      display: none;
+      width: 20px;
+      height: 20px;
+      transform: translateY(-50%);
+    }
+
+    &.invalid {
+      input {
+        color: var(--clr-accent-100);
+        border-bottom: 1px solid var(--clr-accent-100);
+      }
+    }
+
+    &.invalid::before {
+      display: block;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  max-width: 22.5rem;
+  min-height: 2.8125rem;
+
+  padding-left: 1em;
+
+  border-bottom: 1px solid var(--clr-neutral-500);
+
+  &::placeholder {
+    color: hsl(227, 14%, 75%);
+  }
+}
+
+.select-menu {
+  position: relative;
+  z-index: 10;
+
+  cursor: pointer;
+
+  &[open] {
+    .select-menu__arrow {
+      transform: rotateZ(180deg);
+    }
+  }
+}
+
+.select-menu__header {
+  max-width: 22.5rem;
+  min-height: 2.8125em;
+
+  margin-top: 1.5em;
+
+  border-bottom: 1px solid var(--clr-neutral-500);
+  padding-left: 1em;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--fs-300);
+  line-height: 1.75rem;
+  color: #333950;
+
+  list-style-type: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker,
+summary::marker {
+  display: none;
+  content: "";
+}
+
+.select-menu__arrow {
+  margin-right: 0.7em;
+
+  transition: 0.3s;
+}
+
+.select-menu__body {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+
+  padding: 0.5em 2em;
+
+  border: 1px solid rgba(51, 57, 80, 0.15);
+  box-shadow: 0 3.125em 3.125em -1.5625em rgba(75, 92, 154, 0.75);
+  border-radius: 0.5em;
+
+  background-color: var(--clr-neutral-100);
+
+  .select-menu__item--active {
+    position: relative;
+
+    &::before {
+      content: url("/images/sign-up/icon-check.svg");
+      position: absolute;
+      top: 1rem;
+      right: 0.5rem;
+    }
+  }
+}
+
+.select-menu__item {
+  font-weight: bold;
+  color: var(--clr-primary-300);
+  padding: 1em 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--clr-neutral-500);
+  }
+}
+
+.select-menu__item-price {
+  margin-left: 0.3em;
+  color: hsla(227, 22%, 26%, 0.4);
+}

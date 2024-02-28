@@ -1,0 +1,63 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
+@use "../components/buttons" as *;
+@use "../base/typography" as *;
+
+.home {
+  background-color: hsl(0, 0%, 95%);
+  background-image: url("/images/home/bg-pattern-header.svg");
+  background-repeat: no-repeat;
+  background-position: 660px -400px;
+  overflow: hidden;
+
+  @include mq(medium) {
+    background-position: 399px -164px;
+    background-size: 680px;
+  }
+
+  @include mq(small) {
+    background-position: -44px -168px;
+    background-size: 460px;
+  }
+}
+
+.home__header {
+  margin-top: 5.0625em;
+  margin-bottom: 7em;
+
+  @include mq(medium) {
+    margin-top: 4.5em;
+    margin-bottom: 6.5em;
+  }
+
+  @include mq(small) {
+    margin-top: 2.875em;
+    margin-bottom: 5em;
+
+    text-align: center;
+  }
+}
+
+.home__intro {
+  margin-bottom: 6.25em;
+
+  @include mq(medium) {
+    margin-bottom: 8.125em;
+  }
+
+  @include mq(small) {
+    margin-bottom: 6.25em;
+  }
+}
+
+.home__footer {
+  margin-top: -17em;
+
+  @include mq(medium) {
+    margin-top: -33em;
+  }
+
+  @include mq(small) {
+    margin-top: -52em;
+  }
+}

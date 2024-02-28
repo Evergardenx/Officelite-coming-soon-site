@@ -1,0 +1,46 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
+
+.footer {
+  background-color: var(--clr-primary-400);
+  background-image: url("/images/home/bg-pattern-footer.svg");
+  background-repeat: no-repeat;
+  background-position: -683px -592px;
+
+  @include mq(medium) {
+    background-position: -435px -72px;
+    background-size: 1640px;
+  }
+
+  @include mq(small) {
+    background-position: -263px 341px;
+    background-size: 900px;
+  }
+}
+
+.footer__inner {
+  min-height: 37.6875rem;
+
+  padding-top: 21em;
+  padding-bottom: 5.6875em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(medium) {
+    min-height: 61.625em;
+
+    padding-top: 38em;
+    padding-bottom: 6.25em;
+
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @include mq(small) {
+    min-height: 79em;
+
+    padding-top: 56em;
+  }
+}

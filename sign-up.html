@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Officelite coming soon site</title>
+    <link rel="stylesheet" href="/styles/main.min.css" />
+  </head>
+
+  <body>
+    <main class="sign-up">
+      <div class="container">
+        <header class="sign-up__header">
+          <a href="/index.html">
+            <img src="/images/shared/logo.svg" alt="logo" />
+          </a>
+        </header>
+      </div>
+      <div class="container">
+        <section class="intro intro--style--sign-up">
+          <div class="intro__text">
+            <h1 class="intro__title">Work smarter. Save time.</h1>
+            <p class="intro__descrition">
+              Easily manage your projects. Get on the list and receive in-app
+              perks available only to early subscribers. We are moving into
+              final development and getting ready for official launch soon.
+            </p>
+            <div class="timer timer--theme--light">
+              <span class="timer__title h3">
+                Coming
+                <span class="timer__title-date">dd MM yyyy</span>
+              </span>
+              <ul class="timer__body">
+                <li class="timer__section">
+                  <span class="timer__counter h1">00</span>
+                  <p class="timer__unit">days</p>
+                </li>
+                <li class="timer__section">
+                  <span class="timer__counter h1">00</span>
+                  <p class="timer__unit">hours</p>
+                </li>
+                <li class="timer__section">
+                  <span class="timer__counter h1">00</span>
+                  <p class="timer__unit">min</p>
+                </li>
+                <li class="timer__section">
+                  <span class="timer__counter h1">00</span>
+                  <p class="timer__unit">sec</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <form class="sign-up__form form" action="">
+            <label>
+              <input type="text" placeholder="Name" />
+            </label>
+            <label>
+              <input type="text" placeholder="Email Address" />
+            </label>
+
+            <details class="select-menu">
+              <summary class="select-menu__header">
+                <span class="select-menu__header-title">
+                  <span class="select-menu__item-plan">Basic Pack</span>
+                  <span class="select-menu__item-price">Free</span>
+                </span>
+                <svg
+                  class="select-menu__arrow"
+                  width="13"
+                  height="8"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke="#5175FF"
+                    stroke-width="2"
+                    d="M1 1l5.5 5.5L12 1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </summary>
+              <ol class="select-menu__body">
+                <li class="select-menu__item select-menu__item--active">
+                  <span class="select-menu__item-plan">Basic Pack</span>
+                  <span class="select-menu__item-price">Free</span>
+                </li>
+                <li class="select-menu__item">
+                  <span class="select-menu__item-plan">Pro Pack</span>
+                  <span class="select-menu__item-price">$9.99</span>
+                </li>
+                <li class="select-menu__item">
+                  <span class="select-menu__item-plan">Ultimate Pack</span>
+                  <span class="select-menu__item-price">$19.99</span>
+                </li>
+              </ol>
+            </details>
+
+            <label>
+              <input type="text" placeholder="Phone Number" />
+            </label>
+            <label>
+              <input type="text" placeholder="Company" />
+            </label>
+            <button type="submit" class="form__btn btn btn--theme--water">
+              Get on the list
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script src="/scripts/sign-up.js"></script>
+    <script src="/scripts/timer.js"></script>
+    <script src="/scripts/select-menu.js"></script>
+  </body>
+</html>

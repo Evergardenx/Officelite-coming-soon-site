@@ -1,0 +1,37 @@
+@use 'font-face' as *;
+
+body {
+    font-family: "kumbh_sans";
+    font-size: var(--fs-300);
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.75;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    font-weight: bold;
+}
+
+h1,
+.h1 {
+    font-size: var(--fs-900);
+    line-height: 1.143;
+}
+
+h2,
+.h2 {
+    font-size: var(--fs-500);
+    line-height: 1.4;
+}
+
+h3,
+.h3 {
+    font-size: var(--fs-300);
+    line-height: 3;
+    text-transform: uppercase;
+}
